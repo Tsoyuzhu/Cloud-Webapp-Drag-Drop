@@ -1,4 +1,6 @@
 #!/bin/bash
+echo Creating uploads folder
+mkdir uploads
 echo "[installing virtualenv]" 
 pip install virtualenv 
 echo "[creating virtualenv in current directory]"
