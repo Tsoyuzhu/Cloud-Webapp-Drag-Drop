@@ -1,0 +1,65 @@
+<!doctype = html>
+<html lang = "en">
+<head>
+	<meta charset = "utf-8">
+	<title> UPLOAD PAGE </title>
+	<link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+	
+	<style>
+		.jumbotron {
+			background-color: white;
+			text-align: center;
+			height: 50%;
+		}
+	
+		.box {
+			margin: auto;
+			width: 100%;
+			height: 50%;
+			border-width: 5px;
+			border-style: solid;
+			border-radius: 5px;
+		}
+
+		.tableArea {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+		}
+
+		.table {
+			text-align: center;
+			width: 100% 
+		}
+		
+		tr:hover {
+			background-color: #f9f5f4;
+		}
+	</style>
+	
+</head>
+<body class="dropzone">
+	<div class="jumbotron">
+		<h1 class="display-3"> Upload your files</h1>
+		<p class="lead"> Drag and Drop onto this page! </p>
+		<div id="tableArea" class="tableArea"></div>
+	</div>
+
+	<script src="{{url_for('static',filename='js/jquery.js')}}"></script>
+	<script src="{{url_for('static',filename='js/dropscript.js')}}"></script>
+	<script src="{{url_for('static',filename='js/handlebars-v4.0.10.js')}}"></script>
+	{% raw %}	<!-- To avoid conflicting with Handlebars syntax which is similar to jinja2 -->
+	<script type="text/x-handlebars-template" id="tableTemplate">
+    		<table class="table table-condensed">
+        		{{#each filenames}}
+            			<tr>
+                			<td>{{this}}</td>
+            			</tr>
+        		{{/each}}
+    		</table>
+	</script>  	<!-- This script contains the template compiled by Handlebars -->
+	{% endraw %} 
+</body>
+</html>
