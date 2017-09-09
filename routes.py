@@ -29,3 +29,5 @@ def check():
 	filenames = os.listdir("uploads") 
 	returnDict = dict(filenames=filenames) 
 	return jsonify(returnDict) 
+
+	
