@@ -1,6 +1,8 @@
 #!/bin/bash
-echo Creating uploads folder
+echo "[Making sure uploads folder exists in app folder]"
+cd ..
 mkdir uploads
+cd bin
 echo "[installing virtualenv]" 
 pip install virtualenv 
 echo "[creating virtualenv in current directory]"
